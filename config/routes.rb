@@ -1,4 +1,6 @@
 SalonfousheeCom::Application.routes.draw do
+  get "staff/new"
+
   get "content/home"
 
   get "content/staff"
@@ -9,11 +11,14 @@ SalonfousheeCom::Application.routes.draw do
   
   get "content/aboutus"    
   
-  match 'staff' => 'content#staff' 
+  match 'staff-members' => 'content#staff' 
   
-  match 'careers' => 'content#careers'
+  match 'careers' => 'content#careers'   
   
-  match 'about-us' => 'content#aboutus'   
+  match '/register' => 'staff#new' 
+  
+  match '/about-us', :to => 'content#aboutus'  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
