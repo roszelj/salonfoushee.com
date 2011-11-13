@@ -5,7 +5,15 @@ SalonfousheeCom::Application.routes.draw do
 
   get "content/careers"
 
-  get "content/login"
+  get "content/login"   
+  
+  get "content/aboutus"    
+  
+  match 'staff' => 'content#staff' 
+  
+  match 'careers' => 'content#careers'
+  
+  match 'about-us' => 'content#aboutus'   
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
