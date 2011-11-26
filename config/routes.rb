@@ -21,6 +21,7 @@ SalonfousheeCom::Application.routes.draw do
   
   match '/about-us', :to => 'content#aboutus'    
   
+  match '/signup' => 'users#new'
   resources :users
   
 
