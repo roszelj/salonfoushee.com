@@ -1,4 +1,6 @@
 SalonfousheeCom::Application.routes.draw do
+  get "sessions/new"
+
   get "users/new"
 
   get "staff/new"
@@ -21,8 +23,11 @@ SalonfousheeCom::Application.routes.draw do
   
   match '/about-us', :to => 'content#aboutus'    
   
-  match '/signup' => 'users#new'
-  resources :users
+  match '/signup' => 'users#new'  
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  resources :users    
+  resources :sessions, :only => [:new, :create, :destroy]
   
 
   # The priority is based upon order of creation:
