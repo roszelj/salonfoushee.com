@@ -28,7 +28,7 @@ SalonfousheeCom::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   resources :users    
   resources :sessions, :only => [:new, :create, :destroy]
-  
+  protocol = Rails.env.development? ? "https" : "http"  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
